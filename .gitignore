@@ -1,3 +1,10 @@
+data/
+local_data/
+*.pyc
+node_modules/
+npm-debug.log*
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
