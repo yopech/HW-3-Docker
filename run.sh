@@ -19,6 +19,18 @@ case "$1" in
         docker run --rm -v "$(pwd)/data:/data" photo_generator
         ;;
 
+    "build_reporter")
+        echo "Собираем образ для контейнера аналитика..."
+        docker build -t photo_reporter ./reporter
+        ;;
+
+    "run_reporter")
+        echo "Запускаем контейнер аналитика..."
+        mkdir -p data
+
+        docker run --rm -v "$(pwd)/data:/data" photo_reporter
+        ;;
+
     *)
         echo "Использование: $0 {create_local_data|build_generator|run_generator}"
         exit 1
